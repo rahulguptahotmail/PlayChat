@@ -107,7 +107,7 @@ const userRegister = async (req, res) => {
     setTimeout(async () => {
       const user = await userModel.findOne({ email });
       if (!user?.registered) await userModel.findByIdAndDelete(user?._id);
-    }, 600000);
+    }, 60000);
 
     return res.status(201).json({ message: "success", success: true });
   }
