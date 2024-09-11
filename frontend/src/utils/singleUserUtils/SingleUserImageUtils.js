@@ -39,9 +39,6 @@ const SingleUserImageUtils = (props) => {
       {items.length < 1 ? (
         <div className=" w-100 m-auto">
           <h1 className=" w-100 mt-5">No Image Uploaded</h1>
-          <Link to="/imageupload" className=" btn btn-outline-primary mb-2">
-            Upload Image
-          </Link>
         </div>
       ) : (
         ""
