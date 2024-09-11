@@ -7,7 +7,7 @@ const TimeStamp = () => {
     count = 60;
     setInterval(() => {
       if (count > 0) {
-        count = count - 0.5;
+        count = count - 1;
         setTime(count);
       }
     }, 1000);
