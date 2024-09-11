@@ -156,9 +156,14 @@ const fetchSingleImage = async (req, res) => {
 
   const image = await imageModel.findById(imageId);
 
+  if (!image)
+    return res.status(404).json({ message: "Image Not Found", success: false });
+
+  const user = await userModel.findById(image.owner);
+
   return res
     .status(200)
-    .json({ message: "Image Success", image, success: true });
+    .json({ message: "Image Success",imageDetails:{ image,user}, success: true });
 };
 
 // Home Videos with Algorithms
