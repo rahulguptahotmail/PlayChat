@@ -10,15 +10,15 @@ const SingleImage = () => {
           params: { imageId },
         })
         .then((res) => {
-          document.getElementById("singleimage").src = res.data.image.imagePath;
+          document.getElementById("singleimage").src = res.data.imageDetails.image.imagePath;
         });
     };
 
     fetchImage();
   }, []);
   return (
-    <div className=" ms-md-4 ps-md-5 w-100 h-100 d-flex justify-content-center align-items-center">
-      <div className=" position-relative mt-3 b rounded text-center">
+    <div className=" ms-md-4 ps-md-5 w-100 w-100 h-100 d-flex justify-content-center align-items-center">
+      <div className=" position-relative mt-3 b w-75 rounded text-center">
         <Link
           to="/image"
           className=" position-absolute top-0 end-0 me-2 text-black fs-5 fw-bold text-capitalize"
@@ -30,7 +30,7 @@ const SingleImage = () => {
           src={require("../static/thumbnail.jpg")}
           alt="image"
           id="singleimage"
-          className=" rounded shadow mx-4 my-4"
+          className=" rounded shadow mx-4 my-4 w-75"
           style={{ maxHeight: "700px" }}
         />
       </div>
