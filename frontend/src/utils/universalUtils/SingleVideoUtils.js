@@ -46,14 +46,15 @@ const SingleVideoUtils = () => {
     <div>
       {items.map((item, index) => (
         <div key={index} className=" mb-2 ">
+          <Link to={`/video/${item._id}`} style={{ textDecoration: "none" }}>
           <div className=" w-100">
             <video
               src={item.videoPath}
               className=" rounded shadow b image-healing-animation"
               style={{ width: "85%", height: "180px" }}
-              controls
             ></video>
           </div>
+          </Link>
           <div className=" mx-4 rounded-pill d-flex justify-content-between bg-body-tertiary">
             <Link to={`/video/${item._id}`} style={{ textDecoration: "none" }}>
               <div className=" d-flex justify-content-start align-items-center">
