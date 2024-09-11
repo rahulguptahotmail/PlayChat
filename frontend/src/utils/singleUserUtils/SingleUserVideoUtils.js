@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
 import CommentBox from '../universalUtils/CommentBox';
 
 const SingleUserVideo = ( props) => {
@@ -40,9 +39,6 @@ const SingleUserVideo = ( props) => {
         {items.length < 1 ? (
           <div className=" w-100 m-auto">
             <h1 className=" w-100 mt-5">No Video Uploaded</h1>
-            <Link to="/videoupload" className=" btn btn-outline-primary mb-2">
-              Upload Video
-            </Link>
           </div>
         ) : (
           ""
