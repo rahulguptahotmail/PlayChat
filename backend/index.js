@@ -17,12 +17,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true,limit:'500mb' }));
 app.use(cookieParser());
 app.use(express.static("public"));
-app.use((req,res,next)=>{
-   req.header({
-      'Access-Control-Allow-Origin':"*"
-   })
-   next()
-})
 
 // app.get("/", (req, res) => {
 //   app.use(express.static(path.resolve(__dirname, "frontend", "build")));
