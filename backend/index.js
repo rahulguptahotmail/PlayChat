@@ -4,13 +4,17 @@ const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const path = require("path");
+const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 8000;
+
+   if(!fs.existsSync('./public'))
+fs.mkdirSync('./public');
 
 // middlewares
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true,limit:'500mb' }));
 app.use(cookieParser());
 app.use(express.static("public"));
 
